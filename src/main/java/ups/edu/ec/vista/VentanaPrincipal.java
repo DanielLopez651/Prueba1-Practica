@@ -31,9 +31,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         controladorNovio = new ControladorNovio();
         controladorNovia = new ControladorNovia();
         controladorTestigo = new ControladorTestigo();
-        ventanaCasar = new VentanaCasar();
-        ventanaNovia = new VentanaNovia();
-        ventanaNovio = new VentanaNovio();
+        ventanaCasar = new VentanaCasar(controladorNovio,controladorNovia,controladorTestigo);
+        ventanaNovia = new VentanaNovia(controladorNovia);
+        ventanaNovio = new VentanaNovio(controladorNovio);
         ventanaVerCasados = new VentanaVerCasados(controladorNovio, controladorNovia);
         
     }
@@ -62,11 +62,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         desktopPane.setLayout(desktopPaneLayout);
         desktopPaneLayout.setHorizontalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 362, Short.MAX_VALUE)
+            .addGap(0, 461, Short.MAX_VALUE)
         );
         desktopPaneLayout.setVerticalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 287, Short.MAX_VALUE)
+            .addGap(0, 316, Short.MAX_VALUE)
         );
 
         jMenuGestion.setText("Gestionar");
@@ -80,9 +80,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuGestion.add(jMenuItemNovio);
 
         jMenuItemNovia.setText("Novia");
+        jMenuItemNovia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemNoviaActionPerformed(evt);
+            }
+        });
         jMenuGestion.add(jMenuItemNovia);
 
         jMenuItemCasar.setText("Casar");
+        jMenuItemCasar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCasarActionPerformed(evt);
+            }
+        });
         jMenuGestion.add(jMenuItemCasar);
 
         jMenuBar1.add(jMenuGestion);
@@ -90,6 +100,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuVerCasados.setText("Ver Casados");
 
         jMenuItem1.setText("ver Casados");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenuVerCasados.add(jMenuItem1);
 
         jMenuBar1.add(jMenuVerCasados);
@@ -102,8 +117,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addComponent(desktopPane)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,8 +133,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemNovioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNovioActionPerformed
         desktopPane.add(ventanaNovio);
+        ventanaNovio.setVisible(true);
         
     }//GEN-LAST:event_jMenuItemNovioActionPerformed
+
+    private void jMenuItemNoviaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNoviaActionPerformed
+       desktopPane.add(ventanaNovia);
+        ventanaNovia.setVisible(true);
+    }//GEN-LAST:event_jMenuItemNoviaActionPerformed
+
+    private void jMenuItemCasarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCasarActionPerformed
+       desktopPane.add(ventanaCasar);
+        ventanaCasar.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCasarActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+      desktopPane.add(ventanaVerCasados);
+        ventanaVerCasados.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments

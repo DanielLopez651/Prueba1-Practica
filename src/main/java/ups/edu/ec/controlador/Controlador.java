@@ -14,7 +14,7 @@ import java.util.List;
  */
 public abstract class Controlador<E> {
 
-    private List<E> lista;
+   private List<E> lista;
 
     public Controlador() {
         lista=new ArrayList();

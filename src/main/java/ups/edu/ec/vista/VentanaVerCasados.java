@@ -8,6 +8,8 @@ package ups.edu.ec.vista;
 import java.util.List;
 import ups.edu.ec.controlador.ControladorNovia;
 import ups.edu.ec.controlador.ControladorNovio;
+import ups.edu.ec.modelo.Novia;
+import ups.edu.ec.modelo.Novio;
 import ups.edu.ec.modelo.Usuario;
 
 /**
@@ -17,7 +19,8 @@ import ups.edu.ec.modelo.Usuario;
 public class VentanaVerCasados extends javax.swing.JInternalFrame {
     private ControladorNovio controladorNovio;
     private ControladorNovia controladorNovia;
-    private List<Usuario> lista;
+    private List<Novio> lista;
+    private List<Novia> listaa;
     /**
      * Creates new form VentanaVerCasados
      */
@@ -38,6 +41,8 @@ public class VentanaVerCasados extends javax.swing.JInternalFrame {
         jTextArea1 = new javax.swing.JTextArea();
         botonVerNovio = new javax.swing.JButton();
         botonVerNovia = new javax.swing.JButton();
+
+        setClosable(true);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -95,7 +100,7 @@ public class VentanaVerCasados extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_botonVerNovioActionPerformed
 
     private void botonVerNoviaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerNoviaActionPerformed
-        lista=controladorNovia.getLista();
+        listaa=controladorNovia.getLista();
         for (int i = 0; i < lista.size(); i++) {
             jTextArea1.setText(lista.get(i).toString());
         }

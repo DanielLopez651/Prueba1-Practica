@@ -11,12 +11,12 @@ package ups.edu.ec.modelo;
  */
 public class Novia extends Usuario {
 
-    private int codigoNovia;
+    
 
-    public Novia(int codigoNovia, String nombre, String apellido, String cedula,
+    public Novia( String nombre, String apellido, String cedula,
             String direccion, String fechaNaciemnto, String fechaBoda, String genero,
             String estado) {
-        this.codigoNovia = codigoNovia;
+        
         this.setNombre(nombre);
         this.setApellido(apellido);
         this.setCedula(cedula);
@@ -27,12 +27,6 @@ public class Novia extends Usuario {
         this.setEstado(estado);
     }
 
-    public int getCodigoNovia() {
-        return codigoNovia;
-    }
-
-    public void setCodigoNovia(int codigoNovia) {
-        this.codigoNovia = codigoNovia;
-    }
+ 
 
 }
